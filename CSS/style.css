@@ -1,0 +1,82 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #c3dafe, #e0c3fc, #fbc2eb);
+    background-size: 300% 300%;
+    animation: fondoAnimado 12s ease infinite;
+}
+
+/* Animación suave */
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Que la card resalte */
+.card {
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+}
+/* Efecto hover más fuerte */
+.presupuesto-btn:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+.formulario-intergift {
+    max-width: 700px;   /* Controla el tamaño máximo */
+    width: 100%;
+}
+
+.participante {
+    padding: 8px;
+    background: rgb(252, 239, 169);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    cursor: grab;
+}
+
+.drop-zone {
+    min-height: 60px;
+    border: 2px dashed #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f8f9fc;
+}
+
+/* Checkbox más visible */
+.custom-check {
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid #0d6efd;
+    cursor: pointer;
+}
+
+/* Cuando está seleccionado */
+.custom-check:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Cuando recibe foco (accesibilidad teclado) */
+.custom-check:focus {
+    box-shadow: 0 0 0 3px rgba(13,110,253,0.4);
+}
+
+/* Hover más visible */
+.custom-check:hover {
+    border-color: #084298;
+}
+
+/* RESPONSIVE EXTRA */
+@media (min-width: 768px) {
+    .card {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 60%;
+    }
+}
