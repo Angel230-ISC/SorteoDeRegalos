@@ -67,6 +67,17 @@ body {
     border-color: #084298;
 }
 
+.bg-intergift h1 {
+    color: #ff2e88;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.bg-intergift p {
+    color: #c821af;;
+    font-family: 'Montserrat', sans-serif;
+}
+
 /* RESPONSIVE EXTRA */
 @media (min-width: 768px) {
     .card {

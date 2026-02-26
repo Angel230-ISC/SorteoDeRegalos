@@ -36,11 +36,16 @@ origen.addEventListener("drop", (e) => {
 function actualizarExclusiones() {
 
     exclusiones = [];
+    participantes = [];
 
     const itemsDestino = destino.querySelectorAll(".participante");
-
     itemsDestino.forEach(item => {
         exclusiones.push(item.textContent);
+    });
+
+    const itemsOrigen = origen.querySelectorAll(".participante");
+    itemsOrigen.forEach(item => {
+        participantes.push(item.textContent);
     });
 
     verificarCampos();

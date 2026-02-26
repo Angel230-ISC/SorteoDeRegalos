@@ -6,34 +6,34 @@ let presupuestoSeleccionado = 0;
 // AGREGAR PARTICIPANTE
 // ==========================
 function agregarParticipante() {
-    let nombre = document.getElementById("nuevoParticipante").value;
-    if (nombre.trim() === "") return;
+
+    let nombre = document.getElementById("nuevoParticipante").value.trim();
+    if (nombre === "") return;
+
+    // Evitar duplicados reales
+    if (participantes.includes(nombre) || exclusiones.includes(nombre)) {
+        alert("Ese participante ya existe.");
+        return;
+    }
 
     participantes.push(nombre);
+
+    const origen = document.getElementById("origen");
+
+    const div = document.createElement("div");
+    div.className = "participante";
+    div.id = "persona_" + Date.now(); // ID único real
+    div.draggable = true;
+    div.textContent = nombre;
+
+    origen.appendChild(div);
+
     document.getElementById("nuevoParticipante").value = "";
-    renderParticipantes();
+
     verificarCampos();
 }
 
-// ==========================
-// RENDER PARTICIPANTES
-// ==========================
-function renderParticipantes() {
 
-    const origen = document.getElementById("origen");
-    origen.innerHTML = "";
-
-    participantes.forEach((nombre, index) => {
-
-        const div = document.createElement("div");
-        div.className = "participante";
-        div.id = "persona_" + index;
-        div.draggable = true;
-        div.textContent = nombre;
-
-        origen.appendChild(div);
-    });
-}
 
 // ==========================
 // VALIDAR CAMPOS
@@ -104,10 +104,11 @@ function guardarDatos() {
     const eventoPersonalizado = document.getElementById("eventoPersonalizado").value;
     const incluir = document.getElementById("incluir").checked;
 
-   const participantesHTML = document.querySelectorAll(".participante");
+    //  Obtener TODOS los participantes (origen + destino)
+    const todosHTML = document.querySelectorAll(".participante");
     let listaParticipantes = [];
 
-    participantesHTML.forEach(p => {
+    todosHTML.forEach(p => {
         listaParticipantes.push(p.textContent);
     });
 
@@ -119,7 +120,7 @@ function guardarDatos() {
         presupuesto,
         evento: eventoFinal,
         participantes: listaParticipantes,
-        exclusiones,
+        exclusiones, 
         incluir
     };
 
