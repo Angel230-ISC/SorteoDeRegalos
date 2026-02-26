@@ -78,6 +78,33 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.titulo-app {
+    color: #ff2e88;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.subtitulo-app {
+    color: #c821af;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo-app {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.encabezado-app {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* RESPONSIVE EXTRA */
 @media (min-width: 768px) {
     .card {
